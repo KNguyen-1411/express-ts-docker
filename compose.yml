@@ -1,0 +1,13 @@
+services:
+  node_app_dev:
+    container_name: node_app_dev
+    image: node:20
+    build:
+      context: .
+      target: development
+    ports:
+      - "3000:3000"  
+    volumes:
+      - .:/app  
+      - /app/node_modules  
+    command: ["npm", "run", "dev"]  
